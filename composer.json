@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+
+    "autoload": {
+        
+        "psr-4": {
+            "Test\\Kennel\\": "Kennel/",
+            "Test\\Dogs\\": "Dogs/"
+        }
+    }
+}
