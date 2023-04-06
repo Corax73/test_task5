@@ -23,7 +23,7 @@ class KennelTest extends TestCase
 
     }
 
-    public function testAddDog(): void
+    public function testDogBreed(): void
     {
 
         $input = 'dachshund';
@@ -36,4 +36,26 @@ class KennelTest extends TestCase
 
     }
 
+    public function testCreateDog(): void
+    {
+
+        $input = 'dachshund';
+        
+        $this -> kennel -> addDog($input);
+
+        $this -> kennel -> Dogs[0] -> dogBreed;
+
+        $this -> assertNotEmpty($this -> kennel -> Dogs[0]);
+
+    }
+
+    public function testCheckNamesDogClasses(): void
+    {
+
+        $input = 'Rubber dachshund';
+        
+        $this -> assertEquals('Rubber_dachshund', $this -> kennel -> getNamesDogClasses($input));
+
+    }
+   
 }

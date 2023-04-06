@@ -20,7 +20,7 @@ class Kennel
         
         $whatDogToCall = readline("What dog to cal? ");
 
-        $whatDogToCall = $this -> checkComand($whatDogToCall);
+        $whatDogToCall = $this -> checkNamesDogClasses($whatDogToCall);
         
         $this -> addDog($whatDogToCall);
 
@@ -42,10 +42,18 @@ class Kennel
 
     }
 
-    protected function checkComand(string $string): string
+    protected function checkNamesDogClasses(string $string): string
     {
 
         return $string = str_replace(' ', '_', $string);
+        
+    }
+
+    public function getNamesDogClasses(string $string): string
+    {
+
+        return $this -> checkNamesDogClasses($string);
+
     }
     
     public function addDog( string $nameClassDog)
